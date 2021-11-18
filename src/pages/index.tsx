@@ -14,7 +14,7 @@ type ContinentData = {
   data: {
     title: string;
     summary: string;
-    slider_image: {
+    image: {
       url: string;
     };
   };
@@ -56,7 +56,7 @@ export default function Home({ continents }: HomeProps) {
         Então escolha seu continente
       </Heading>
 
-      <Slider continents={continents} />
+      {/* <Slider continents={continents} /> */}
     </Flex>
   );
 }
@@ -68,12 +68,14 @@ export const getStaticProps: GetStaticProps = async () => {
     Prismic.Predicates.at("document.type", "continent"),
   ]);
 
+  console.log(response);
+
   const continents = response.results.map((continent: ContinentData) => {
     return {
       slug: continent.uid,
       title: continent.data.title,
       summary: continent.data.summary,
-      image: continent.data.slider_image.url,
+      image: continent.data.image.url,
     };
   });
 

@@ -5,9 +5,6 @@ import NextNProgress from "nextjs-progressbar";
 
 // Import Swiper styles
 import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
-import "swiper/components/pagination/pagination.scss";
-import "swiper/components/scrollbar/scrollbar.scss";
 
 import "../styles/slider.scss";
 
